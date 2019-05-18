@@ -1,12 +1,12 @@
-from util import followertracker
+import util as ut
+import vis_util as vu
 
 # You can change usernames as you wish or leave it None
 twitter_username = "deeplearningtr"
 instagram_username = "deeplearningtr"
 meetup_username = "Deep-Learning-Turkiye"
 
-tracker = followertracker(twitter_username, instagram_username, meetup_username)
+tracker = ut.followertracker(twitter_username, instagram_username, meetup_username)
 
-print("Twitter Followers: ",tracker.twitter())
-print("Instagram Followers: ",tracker.instagram())
-print("Meetup Followers: ",tracker.meetup())
+ut.printer(tracker)
+vu.visualize(tracker)

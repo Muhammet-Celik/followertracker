@@ -1,3 +1,4 @@
+import numpy as np
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -39,3 +40,8 @@ class followertracker(object):
         temp = soup.find('a', class_ = "groupHomeHeaderInfo-memberLink").find('span')
         self.meetup_follower = int(str(temp).split('>')[1].split('<')[0].split(' ')[0].replace('.', ''))
         return self.meetup_follower
+
+def printer(tracker):
+    print("Twitter Followers: ",tracker.twitter())
+    print("Instagram Followers: ",tracker.instagram())
+    print("Meetup Followers: ",tracker.meetup())
